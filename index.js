@@ -5,8 +5,10 @@ require('dotenv').config()
 const db = require('./config/db')
 const bookRoutes=require('./routes/bookRoute')
 const userRoutes=require('./routes/userRoute')
-const port = process.env.PORT||5000
+const orderRoutes=require('./routes/orderRoute')
+const port = process.env.PORT||6000
 app.use('/api/books/',bookRoutes)
 app.use('/api/users/',userRoutes)
+app.use('/api/orders/',orderRoutes)
 app.get('/', (req, res) => res.send('Hello World!'))
 app.listen(port, () => console.log(`Example app listening on port ${port}!`))
